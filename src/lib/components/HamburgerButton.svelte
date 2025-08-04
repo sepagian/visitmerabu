@@ -4,7 +4,7 @@
 
 <button
 	onclick={toggle}
-	class="inline-flex items-center justify-center text-indigo-800 sm:hidden"
+	class="inline-flex items-center justify-center text-sky-800 sm:hidden"
 	aria-label="Toggle Menu">
 	<svg
 		class="h-6 w-6"

@@ -8,7 +8,7 @@
 	<NavigationMenu.Root
 		class="mt-4 w-full rounded-2xl bg-white px-6 py-4 sm:hidden"
 		orientation="vertical">
-		<NavigationMenu.List class="flex flex-col gap-4 text-indigo-800">
+		<NavigationMenu.List class="flex flex-col gap-4 text-sky-800">
 			<NavigationMenu.Item>
 				<NavigationMenu.Link
 					href="/tentang-kami"

@@ -22,7 +22,7 @@
 	<div class="flex gap-4">
 		<div
 			class="flex w-full items-center justify-between rounded-xl bg-white px-4 py-4 sm:px-6 sm:py-4">
-			<div class="text-lg font-semibold text-indigo-800">VisitMerabu.org</div>
+			<div class="text-lg font-semibold text-sky-800">VisitMerabu.org</div>
 			<DesktopNav />
 			<HamburgerButton
 				{isOpen}
@@ -30,7 +30,7 @@
 		</div>
 		<div class="flex">
 			<Button.Root
-				class="inline-flex text-nowrap w-auto px-4 items-center justify-center rounded-xl bg-indigo-800 text-white hover:bg-indigo-950"
+				class="inline-flex w-auto items-center justify-center text-nowrap rounded-xl bg-sky-800 px-4 text-white hover:bg-sky-950"
 				href="/contact">Hubungi Kami</Button.Root>
 		</div>
 	</div>
@@ -49,11 +49,3 @@
 <main class="relative flex-1">
 	{@render children?.()}
 </main>
-
-<style>
-	:global(body) {
-		margin: 0;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-</style>
