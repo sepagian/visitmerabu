@@ -15,18 +15,16 @@ export default defineConfig({
 		"layout-base": "font-sans text-brandDark min-h-screen flex flex-col",
 		"section-base": "relative flex flex-col gap-4 justify-center p-4 h-screen sm:px-12",
 		"bg-overlay": "absolute inset-0 z-0 bg-black opacity-60",
-		"section-container": "z-10 max-w-2xl gap-4",
+		"section-container": "flex flex-col z-10 max-w-2xl gap-2",
 		"section-divider": "prose font-noto",
 		"mobile-invisible": "hidden sm:block",
 		"desktop-invisible": "block sm:hidden",
 
 		// BUTTONS
-		"btn-base": "px-6 py-3 rounded-xl cursor-pointer",
-		"btn-primary": "btn-base bg-merabuSky-800 text-white hover:bg-blue-600",
-		"btn-secondary": "btn bg-brandSecondary text-dark hover:bg-yellow-600",
+		"btn-base": "px-6 py-3 z-10 rounded-xl cursor-pointer",
 
 		// TEXT & TYPOGRAPHY
-		"text-base": "prose max-w-none text-base",
+		"text-base": "max-w-none text-base",
 		"heading-h1": "font-bold font-sans text-wrap text-2xl sm:text-4xl",
 		"heading-h2": "font-bold font-sans text-wrap text-xl sm:text-2xl",
 		"paragraph-base": "font-noto text-wrap text-base",
@@ -35,7 +33,7 @@ export default defineConfig({
 	},
 	theme: {
 		colors: {
-			brandPrimary: "oklch(39.3% 0.095 152.535)",
+			brandPrimary: "oklch(39.8% 0.195 277.366)",
 			brandSecondary: "oklch(79.5% 0.184 86.047)",
 			brandDark: "oklch(14.5% 0 0)",
 			brandLight: "oklch(98.5% 0 0)",
@@ -76,6 +74,31 @@ export default defineConfig({
 			serif: "Instrument Serif, serif",
 		},
 	},
+	safelist: [
+		"text-brandDark",
+		"text-brandLight",
+		"text-merabuAmber-50",
+		"text-merabuAmber-100",
+		"text-merabuAmber-200",
+		"text-merabuAmber-300",
+		"text-merabuAmber-400",
+		"text-merabuAmber-500",
+		"text-merabuSky-500",
+		"text-merabuSky-600",
+		"text-merabuSky-700",
+		"text-merabuSky-800",
+		"text-merabuSky-900",
+		"text-merabuSky-950",
+		"text-merabuForest-500",
+		"text-merabuForest-600",
+		"text-merabuForest-700",
+		"text-merabuForest-800",
+		"text-merabuForest-900",
+		"text-merabuForest-950",
+		"text-merabuIndigo-700",
+		"text-merabuIndigo-800",
+		"text-merabuIndigo-900",
+	],
 	presets: [
 		presetWind4({
 			preflights: {

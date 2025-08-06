@@ -1,8 +1,8 @@
 <script lang="ts">
 	import favicon from "$lib/assets/favicon.svg";
-	import DesktopNav from "$lib/components/DesktopNav.svelte";
-	import MobileNav from "$lib/components/MobileNav.svelte";
-	import HamburgerButton from "$lib/components/HamburgerButton.svelte";
+	import DesktopNav from "$lib/components/nav/DesktopNav.svelte";
+	import MobileNav from "$lib/components/nav/MobileNav.svelte";
+	import HamburgerButton from "$lib/components/nav/HamburgerButton.svelte";
 	import { Button } from "bits-ui";
 	import { fly } from "svelte/transition";
 	let { children } = $props();
@@ -21,7 +21,7 @@
 <header class="z-90 fixed top-4 w-full flex-col justify-between px-4 sm:flex sm:px-8">
 	<div class="flex gap-4">
 		<div
-			class="flex w-full items-center justify-between rounded-xl bg-white px-4 py-4 sm:px-6 sm:py-4">
+			class="flex w-full items-center justify-between rounded-xl bg-white px-4 py-2 sm:px-6 sm:py-4">
 			<div class="text-lg font-semibold text-sky-800">VisitMerabu.org</div>
 			<DesktopNav />
 			<HamburgerButton
@@ -46,6 +46,7 @@
 	</div>
 </header>
 
-<main class="relative flex-1">
+<main
+	class="relative h-screen flex-1 snap-y snap-mandatory overflow-y-auto overscroll-contain scroll-smooth">
 	{@render children?.()}
 </main>
