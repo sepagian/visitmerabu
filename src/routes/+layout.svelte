@@ -46,7 +46,6 @@
 	</div>
 </header>
 
-<main
-	class="relative h-screen flex-1 snap-y snap-mandatory overflow-y-auto overscroll-contain scroll-smooth">
+<main class="relative h-screen flex-1 scroll-smooth">
 	{@render children?.()}
 </main>
