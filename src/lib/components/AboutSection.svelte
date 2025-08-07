@@ -1,54 +1,36 @@
 <script lang="ts">
 	import { Button } from "bits-ui";
-
-	let {
-		title,
-		subtitle,
-		contentParagraph,
-		titleColor,
-		subtitleColor,
-		contentColor,
-		buttonText,
-		buttonLink,
-	} = $props<{
-		title: string;
-		subtitle: string;
-		contentParagraph: string[];
-		buttonText: string;
-		buttonLink: string;
-		titleColor: string;
-		subtitleColor: string;
-		contentColor: string;
-	}>();
+	import { aboutData } from "$lib/data/landingData";
 </script>
 
-<section class="section-base bg-merabuAmber-50 snap-center">
-	<span class="paragraph-caption {subtitleColor}">{subtitle}</span>
+<section class="section-base bg-merabuAmber-50 h-screen snap-center">
+	<span class="paragraph-caption {aboutData.subtitleColor}">{aboutData.subtitle}</span>
 	<div class="section-container">
-		<h1 class="heading-h1 {titleColor}">
-			{title}
+		<h1 class="heading-h1 {aboutData.titleColor}">
+			{aboutData.title}
 		</h1>
 	</div>
 	<div class="section-container">
-		{#each contentParagraph as paragraph, i}
+		{#each aboutData.contentParagraph as paragraph, i}
 			{#if i === 0}
-				<p class="paragraph-base {contentColor}">{paragraph}</p>
+				<p class="paragraph-base {aboutData.contentColor}">{paragraph}</p>
 			{:else}
-				<p class="paragraph-base mobile-invisible {contentColor}">{paragraph}</p>
+				<p class="paragraph-base mobile-invisible {aboutData.contentColor}">{paragraph}</p>
 			{/if}
 
-			{#if i < contentParagraph.length - 1}
+			{#if i < aboutData.contentParagraph.length - 1}
 				{#if i === 0}
-					<p class="text-prose text-base-lg {contentColor} mobile-invisible text-left">
+					<p
+						class="text-prose text-base-lg {aboutData.contentColor} mobile-invisible text-left">
 						—
 					</p>
 				{:else}
-					<p class="text-prose text-base-lg {contentColor} text-left">—</p>
+					<p class="text-prose text-base-lg {aboutData.contentColor} text-left">—</p>
 				{/if}
 			{/if}
 		{/each}
 	</div>
 	<Button.Root
 		class="btn-base bg-merabuSky-700 text-merabuAmber-50 desktop-invisible text-center"
-		href={buttonLink}>{buttonText}</Button.Root>
+		href={aboutData.buttonLink}>{aboutData.buttonText}</Button.Root>
 </section>

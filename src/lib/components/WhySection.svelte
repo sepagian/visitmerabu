@@ -1,31 +1,20 @@
 <script lang="ts">
-	let { title, subtitle, titleColor, subtitleColor } = $props<{
-		title: string;
-		subtitle: string;
-		titleColor: string;
-		subtitleColor: string;
-	}>();
+	import { whyData } from "$lib/data/landingData";
+	import FeatureCard from "./card/FeatureCard.svelte";
 </script>
 
-<section class="section-base bg-merabuAmber-50 snap-start items-center">
+<section class="section-base bg-merabuAmber-50 h-fit snap-start items-center sm:h-screen">
 	<div class="section-container max-w-screen w-full justify-start rounded-3xl bg-orange-100 p-4">
-		<p class="paragraph-caption text-center {subtitleColor}">
-			{subtitle}
+		<p class="paragraph-caption text-center {whyData.subtitleColor}">
+			{whyData.subtitle}
 		</p>
-		<h1 class="heading-h1 text-center {titleColor}">
-			{title}
+		<h1 class="heading-h1 text-center {whyData.titleColor}">
+			{whyData.title}
 		</h1>
-
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-				<div class="section-container bg-merabuAmber-50 rounded-lg">1</div>
-				<div class="section-container bg-merabuAmber-50 rounded-lg">1</div>
-				<div class="section-container bg-merabuAmber-50 rounded-lg">1</div>
-				<div class="section-container bg-merabuAmber-50 rounded-lg">1</div>
-			</div>
-			<div class="grid grid-cols-1 gap-4">
-				<div class="section-container bg-merabuAmber-50 rounded-lg">Square</div>
-			</div>
+		<div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{#each whyData.cards as item (item.title)}
+				<FeatureCard data={item} />
+			{/each}
 		</div>
 	</div>
 </section>
