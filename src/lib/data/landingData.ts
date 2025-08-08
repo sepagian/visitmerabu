@@ -46,6 +46,13 @@ export interface WhyData extends BaseData {
 	cards: CardData[];
 }
 
+export interface ExperienceImage extends BaseCard {
+	imageUrl: string;
+	span?: string;
+}
+
+export type ExperienceData = ExperienceImage[];
+
 export const heroData: HeroData = {
 	title: "Menjejak di Tanah Merabu—Kampung di Pelukan Hutan Kalimantan",
 	subtitle:
@@ -112,3 +119,42 @@ export const whyData: WhyData = {
 		} as ImageCardData,
 	] as CardData[],
 };
+
+export const experienceImages: ExperienceImage[] = [
+	{
+		title: "Trekking to Nya'Deng Lake",
+		imageUrl: "/images/nyadeng.jpg",
+	},
+	{
+		title: "Hiking to Ketepu Peak",
+		imageUrl: "/images/ketepu.jpg",
+	},
+	{
+		title: "Adopt a Tree",
+		imageUrl: "/images/adopt.jpg",
+	},
+	{
+		title: "Discover the Historical Bloyot Cave",
+		imageUrl: "/images/bloyot.jpg",
+	},
+	{
+		title: "Venture into Sedepan Bu Cave",
+		imageUrl: "/images/gua.jpg",
+	},
+	{
+		title: "Cruising Lesan River",
+		imageUrl: "/images/lesan.jpg",
+	},
+	{
+		title: "Journey through the Lowland Rainforest",
+		imageUrl: "/images/rainforest.jpg",
+	},
+	{
+		title: "Explore the Heart of Merabu Village",
+		imageUrl: "/images/explore.jpg",
+	},
+	{
+		title: "Traditional Hunting and Cooking Experiences",
+		imageUrl: "/images/hunt.jpg",
+	},
+];
