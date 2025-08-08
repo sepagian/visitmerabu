@@ -4,7 +4,8 @@
 </script>
 
 <section class="section-base bg-merabuAmber-50 h-fit snap-start items-center sm:h-screen">
-	<div class="section-container max-w-screen w-full justify-start rounded-3xl bg-orange-100 p-4">
+	<div
+		class="section-container max-w-screen w-full justify-start rounded-3xl bg-orange-100 p-4 pt-8">
 		<p class="paragraph-caption text-center {whyData.subtitleColor}">
 			{whyData.subtitle}
 		</p>
