@@ -2,15 +2,13 @@
 	export const {
 		title,
 		imageUrl,
-		span,
 	}: {
 		title: string;
 		imageUrl: string;
-		span?: string;
 	} = $props();
 </script>
 
-<div class="overflow-hidden rounded-2xl shadow-sm {span}">
+<div class="overflow-hidden rounded-2xl shadow-sm ">
 	<img
 		src={imageUrl}
 		alt={title}

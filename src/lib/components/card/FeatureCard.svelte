@@ -18,7 +18,10 @@
 				src={image.imageUrl}
 				alt={image.title}
 				class="absolute inset-0 h-full w-full object-cover" />
-			<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+			<div
+				class="bg-overlay"
+				aria-hidden="true">
+			</div>
 			<div class="relative flex h-full flex-col justify-between p-8 text-white">
 				<h3 class="text-3xl font-bold">{image.title}</h3>
 				<a
