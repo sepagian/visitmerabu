@@ -53,6 +53,13 @@ export interface ExperienceImage extends BaseCard {
 
 export type ExperienceData = ExperienceImage[];
 
+export interface WhereData extends BaseData {
+	subtitle: string;
+	subtitleColor: string;
+	description: string;
+	descriptionColor: string;
+}
+
 export const heroData: HeroData = {
 	title: "Menjejak di Tanah Merabu—Kampung di Pelukan Hutan Kalimantan",
 	subtitle:
@@ -158,3 +165,13 @@ export const experienceImages: ExperienceImage[] = [
 		imageUrl: "/images/hunt.jpg",
 	},
 ];
+
+export const whereData: WhereData = {
+	title: "Merabu Guesthouse – Rumah Sederhana di Jantung Kampung",
+	titleColor: "text-merabuForest-800",
+	subtitle: "Menginap bukan hanya beristirahat—tetapi ikut merasakan denyut kehidupan Merabu.",
+	subtitleColor: "text-merabuForest-600",
+	description:
+		"Merabu Guesthouse dibangun melalui kerjasama LPHD Merabu dengan Pemerintah Provinsi Kalimantan Timur, diwakili oleh KPHP Berau Tengah. Hubungi kami untuk informasi lengkap mengenai fasilitas, ketersediaan kamar, atau cara memesan penginapan selama Anda menjelajahi Kampung Merabu.",
+	descriptionColor: "text-merabuForest-700",
+};
