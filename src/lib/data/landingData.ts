@@ -172,6 +172,6 @@ export const whereData: WhereData = {
 	subtitle: "Menginap bukan hanya beristirahat—tetapi ikut merasakan denyut kehidupan Merabu.",
 	subtitleColor: "text-merabuForest-600",
 	description:
-		"Merabu Guesthouse dibangun melalui kerjasama LPHD Merabu dengan Pemerintah Provinsi Kalimantan Timur, diwakili oleh KPHP Berau Tengah. Hubungi kami untuk informasi lengkap mengenai fasilitas, ketersediaan kamar, atau cara memesan penginapan selama Anda menjelajahi Kampung Merabu.",
+		"Merabu Guesthouse dibangun melalui kerjasama LPHD Merabu dengan Pemerintah Provinsi Kalimantan Timur lewat KPHP Berau Tengah. Hubungi kami untuk informasi lengkap mengenai fasilitas, ketersediaan kamar, atau cara memesan penginapan selama Anda menjelajahi Kampung Merabu.",
 	descriptionColor: "text-merabuForest-700",
 };
