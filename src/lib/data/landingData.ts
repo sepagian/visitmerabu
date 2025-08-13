@@ -66,7 +66,7 @@ export const heroData: HeroData = {
 		"Di balik perbukitan batu kapur dan aliran Sungai Lesan, Kampung Merabu berdiri sebagai penjaga alam dan budaya Dayak. Jelajahi tempat di mana waktu terasa melambat, dan kehidupan berjalan selaras dengan bumi.",
 	titleColor: "text-merabuAmber-50",
 	subtitleColor: "text-merabuAmber-50",
-	imageUrl: "/hero.jpg",
+	imageUrl: "/hero.webp",
 	buttonText: "Jelajahi Merabu",
 	buttonLink: "/experiences",
 };
@@ -122,7 +122,7 @@ export const whyData: WhyData = {
 			title: "Jelajahi Merabu lebih Dalam",
 			buttonText: "Lihat Panduan",
 			buttonLink: "/visit",
-			imageUrl: "/ecosystems.jpg",
+			imageUrl: "/ecosystems.webp",
 		} as ImageCardData,
 	] as CardData[],
 };
