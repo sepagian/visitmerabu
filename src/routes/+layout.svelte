@@ -16,6 +16,8 @@
 	<link
 		rel="icon"
 		href={favicon} />
+	<meta name="description" content="Kunjungi Kampung Merabu, desa ecotourism di Kalimantan Timur. Rasakan harmoni alam, budaya Dayak Lebo, dan pengalaman hidup berkelanjutan. Rencanakan perjalanan Anda bersama kami!">
+	<title>Kampung Merabu - Ecotourism & Budaya Dayak di Kalimantan Timur</title>
 </svelte:head>
 
 <header class="z-90 fixed top-4 w-full flex-col justify-between px-4 sm:flex sm:px-8">
