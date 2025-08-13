@@ -56,7 +56,7 @@ export type ExperienceData = ExperienceImage[];
 export interface WhereData extends BaseData {
 	subtitle: string;
 	subtitleColor: string;
-	description: string;
+	description: string[];
 	descriptionColor: string;
 }
 
@@ -167,11 +167,14 @@ export const experienceImages: ExperienceImage[] = [
 ];
 
 export const whereData: WhereData = {
-	title: "Merabu Guesthouse – Rumah Sederhana di Jantung Kampung",
-	titleColor: "text-merabuForest-800",
-	subtitle: "Menginap bukan hanya beristirahat—tetapi ikut merasakan denyut kehidupan Merabu.",
-	subtitleColor: "text-merabuForest-600",
-	description:
-		"Merabu Guesthouse dibangun melalui kerjasama LPHD Merabu dengan Pemerintah Provinsi Kalimantan Timur lewat KPHP Berau Tengah. Hubungi kami untuk informasi lengkap mengenai fasilitas, ketersediaan kamar, atau cara memesan penginapan selama Anda menjelajahi Kampung Merabu.",
-	descriptionColor: "text-merabuForest-700",
+	title: "Kirim Permintaan Booking",
+	titleColor: "text-merabuAmber-50",
+	subtitle: "Rencanakan Kunjungan Anda",
+	subtitleColor: "text-merabuAmber-50",
+	description: [
+		"Isi formulir di samping untuk mengirimkan permintaan booking Anda. Kami akan segera menghubungi Anda melalui WhatsApp untuk konfirmasi ketersediaan dan detail lebih lanjut.",
+		"-",
+		"Harap dicatat bahwa ini adalah permintaan, bukan konfirmasi booking otomatis.",
+	],
+	descriptionColor: "text-merabuAmber-50",
 };
