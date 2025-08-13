@@ -5,7 +5,7 @@
 </script>
 
 <section class="section-base bg-merabuAmber-50 h-fit items-center">
-	<div class="section-container mx-auto max-w-7xl">
+	<div class="section-container mx-auto max-w-7xl" data-fade-children>
 		<!-- Section Header -->
 		<p class="paragraph-caption text-merabuForest-700 text-center">
 			Ada apa di Merabu?
@@ -15,7 +15,7 @@
 		</h2>
 
 		<!-- Masonry Layout -->
-		<div class="mt-12 columns-1 gap-6 [column-fill:_balance] sm:columns-3 lg:columns-3">
+		<div class="mt-12 columns-1 gap-6 [column-fill:_balance] sm:columns-3 lg:columns-3" data-fade-children>
 			{#each experienceImages as exp, i (exp.title)}
 				{#if i <= 2 }
 					<div class="mb-6 break-inside-avoid">

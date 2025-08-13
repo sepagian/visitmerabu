@@ -4,13 +4,13 @@
 </script>
 
 <section class="section-base bg-merabuAmber-50 h-screen snap-center">
-	<span class="paragraph-caption {aboutData.subtitleColor}">{aboutData.subtitle}</span>
-	<div class="section-container">
+	<span class="paragraph-caption {aboutData.subtitleColor}" data-fade-children>{aboutData.subtitle}</span>
+	<div class="section-container" data-fade-children>
 		<h1 class="heading-h1 {aboutData.titleColor}">
 			{aboutData.title}
 		</h1>
 	</div>
-	<div class="section-container">
+	<div class="section-container" data-fade-children>
 		{#each aboutData.contentParagraph as paragraph, i}
 			{#if i === 0}
 				<p class="paragraph-base {aboutData.contentColor}">{paragraph}</p>

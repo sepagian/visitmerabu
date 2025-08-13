@@ -10,12 +10,16 @@
 		class="bg-overlay"
 		aria-hidden="true">
 	</div>
-	<div class="section-container snap-center">
+	<div
+		class="section-container snap-center"
+		data-fade-children>
 		<h1 class="heading-h1 {heroData.titleColor} text-center">
 			{heroData.title}
 		</h1>
 	</div>
-	<div class="section-container">
+	<div
+		class="section-container"
+		data-fade-children>
 		<p class="paragraph-base text-center {heroData.subtitleColor}">
 			{heroData.subtitle}
 		</p>
