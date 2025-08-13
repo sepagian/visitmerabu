@@ -13,7 +13,7 @@ export default defineConfig({
 	shortcuts: {
 		// GLOBAL & LAYOUT
 		"layout-base": "font-sans text-brandDark min-h-screen flex flex-col",
-		"section-base": "relative flex flex-col gap-4 justify-center p-4 sm:px-12",
+		"section-base": "relative flex flex-col sm:flex  gap-4 justify-center p-4 sm:px-12",
 		"bg-overlay": "absolute inset-0 z-0 bg-black opacity-60",
 		"section-container": "flex flex-col z-10 max-w-2xl gap-2",
 		"section-divider": "prose font-noto",
