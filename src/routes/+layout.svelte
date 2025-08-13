@@ -31,7 +31,7 @@
 		<div class="flex">
 			<Button.Root
 				class="inline-flex w-auto items-center justify-center text-nowrap rounded-xl bg-sky-800 px-4 text-white hover:bg-sky-950"
-				href="/contact">Hubungi Kami</Button.Root>
+				href="#contact">Hubungi Kami</Button.Root>
 		</div>
 	</div>
 	<div class="w-full flex-col gap-4 sm:flex">

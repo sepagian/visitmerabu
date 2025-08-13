@@ -10,4 +10,4 @@
 <AboutSection />
 <WhySection />
 <ExperienceSection />
-<WheretoStaySection/>
+<WheretoStaySection />
