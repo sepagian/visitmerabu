@@ -49,3 +49,9 @@
 <main class="relative h-screen flex-1 scroll-smooth">
 	{@render children?.()}
 </main>
+
+<style>
+	* {
+		background-color: "oklch(98.7% 0.022 95.277)";
+	}
+</style>
