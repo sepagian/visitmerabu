@@ -1,13 +1,25 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+// Lazy-load GSAP and ScrollTrigger to avoid render-blocking the main bundle.
+// This reduces initial JS payload and network dependency depth until the animation is actually used.
 let registered = false;
-function ensureRegistered() {
-  if (registered) return;
-  if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
+let registering: Promise<void> | null = null;
+let gsapRef: any = null;
+let ScrollTriggerRef: any = null;
+
+function ensureRegistered(): Promise<void> {
+  if (registered) return Promise.resolve();
+  if (registering) return registering;
+  if (typeof window === "undefined") return Promise.resolve();
+
+  registering = (async () => {
+    const g = (await import("gsap")).gsap;
+    const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+    g.registerPlugin(ScrollTrigger);
+    gsapRef = g;
+    ScrollTriggerRef = ScrollTrigger;
     registered = true;
-  }
+  })();
+
+  return registering;
 }
 
 export type ScrollFadeOptions = {
@@ -28,7 +40,6 @@ export type ScrollFadeOptions = {
 };
 
 export function scrollFade(node: Element, options: ScrollFadeOptions = {}) {
-  ensureRegistered();
   if (typeof window === "undefined") return {};
 
   const {
@@ -71,21 +82,29 @@ export function scrollFade(node: Element, options: ScrollFadeOptions = {}) {
     targets = descendants.length ? descendants : [node];
   }
 
-  // Set initial hidden state for targets so they can fade in
-  gsap.set(targets as gsap.TweenTarget, { autoAlpha: 0, y: yIn });
+  // Set initial hidden state for targets using inline styles to avoid layout thrashing.
+  // We'll switch to GSAP animations once it's loaded.
+  for (const t of targets) {
+    const ht = t as HTMLElement;
+    ht.style.willChange = "opacity, transform";
+    ht.style.opacity = "0";
+    ht.style.transform = `translateY(${yIn}px)`;
+  }
 
-  let currentTween: gsap.core.Tween | null = null;
+  let currentTween: any = null;
+  let st: any = null;
+  let destroyed = false;
 
   function killCurrent() {
     if (currentTween) {
-      currentTween.kill();
+      currentTween.kill?.();
       currentTween = null;
     }
   }
 
   function playIn() {
     killCurrent();
-    currentTween = gsap.to(targets as gsap.TweenTarget, {
+    currentTween = gsapRef.to(targets as any, {
       autoAlpha: 1,
       y: 0,
       duration: durationIn,
@@ -97,7 +116,7 @@ export function scrollFade(node: Element, options: ScrollFadeOptions = {}) {
 
   function playOut() {
     killCurrent();
-    currentTween = gsap.to(targets as gsap.TweenTarget, {
+    currentTween = gsapRef.to(targets as any, {
       autoAlpha: 0,
       y: yOut,
       duration: durationOut,
@@ -107,26 +126,34 @@ export function scrollFade(node: Element, options: ScrollFadeOptions = {}) {
     });
   }
 
-  const st = ScrollTrigger.create({
-    trigger: node,
-    start,
-    ...(end ? { end } : {}),
-    onEnter: () => {
-      playIn();
-      if (once) st.disable();
-    },
-    onEnterBack: () => {
-      playIn();
-    },
-    onLeaveBack: () => {
-      if (!once) playOut();
-    },
-    // Intentionally do nothing onLeave (scrolling down past the section) so elements remain visible
+  // Lazily import and init ScrollTrigger when needed.
+  ensureRegistered().then(() => {
+    if (destroyed) return;
+
+    // After GSAP is ready, ensure initial state is set using GSAP for consistency.
+    gsapRef.set(targets as any, { autoAlpha: 0, y: yIn });
+
+    st = ScrollTriggerRef.create({
+      trigger: node,
+      start,
+      ...(end ? { end } : {}),
+      onEnter: () => {
+        playIn();
+        if (once) st.disable();
+      },
+      onEnterBack: () => {
+        playIn();
+      },
+      onLeaveBack: () => {
+        if (!once) playOut();
+      },
+    });
   });
 
   return {
     destroy() {
-      st.kill();
+      destroyed = true;
+      st?.kill?.();
       killCurrent();
     },
   };
