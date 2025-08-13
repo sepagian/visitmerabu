@@ -17,7 +17,10 @@
 			<img
 				src={image.imageUrl}
 				alt={image.title}
-				class="absolute inset-0 h-full w-full object-cover" />
+				class="absolute inset-0 h-full w-full object-cover"
+				loading="lazy"
+				decoding="async"
+				fetchpriority="low" />
 			<div
 				class="bg-overlay"
 				aria-hidden="true">
