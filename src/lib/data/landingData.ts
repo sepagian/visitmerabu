@@ -130,39 +130,39 @@ export const whyData: WhyData = {
 export const experienceImages: ExperienceImage[] = [
 	{
 		title: "Trekking to Nya'Deng Lake",
-		imageUrl: "/images/nyadeng.jpg",
+		imageUrl: "/images/nyadeng.webp",
 	},
 	{
 		title: "Hiking to Ketepu Peak",
-		imageUrl: "/images/ketepu.jpg",
+		imageUrl: "/images/ketepu.webp",
 	},
 	{
 		title: "Adopt a Tree",
-		imageUrl: "/images/adopt.jpg",
+		imageUrl: "/images/adopt.webp",
 	},
 	{
 		title: "Discover the Historical Bloyot Cave",
-		imageUrl: "/images/bloyot.jpg",
+		imageUrl: "/images/bloyot.webp",
 	},
 	{
 		title: "Venture into Sedepan Bu Cave",
-		imageUrl: "/images/gua.jpg",
+		imageUrl: "/images/gua.webp",
 	},
 	{
 		title: "Cruising Lesan River",
-		imageUrl: "/images/lesan.jpg",
+		imageUrl: "/images/lesan.webp",
 	},
 	{
 		title: "Journey through the Lowland Rainforest",
-		imageUrl: "/images/rainforest.jpg",
+		imageUrl: "/images/rainforest.webp",
 	},
 	{
 		title: "Explore the Heart of Merabu Village",
-		imageUrl: "/images/explore.jpg",
+		imageUrl: "/images/explore.webp",
 	},
 	{
 		title: "Traditional Hunting and Cooking Experiences",
-		imageUrl: "/images/hunt.jpg",
+		imageUrl: "/images/hunt.webp",
 	},
 ];
 
