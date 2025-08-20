@@ -90,7 +90,7 @@ export const whyData: WhyData = {
 	title: "Hidup Berdampingan bersama Alam dan Budaya",
 	subtitle: "Mengapa Merabu?",
 	titleColor: "text-merabuSky-800",
-	subtitleColor: "text-merabuSky-600",
+	subtitleColor: "text-merabuSky-500",
 	bgColor: "bg-merabuAmber-50",
 	cards: [
 		{
