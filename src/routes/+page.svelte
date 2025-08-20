@@ -7,9 +7,6 @@
 	import { scrollFade } from "$lib/animations/scrollFade";
 </script>
 
-<!-- Each section now animates individual elements inside it.
-     We target children of any element marked data-fade-children,
-     and any element explicitly marked with data-fade. -->
 <section
 	use:scrollFade={{ once: false, stagger: 0.08 }}
 	data-fade-target="[data-fade-children] > *, [data-fade]">
